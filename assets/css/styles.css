@@ -777,3 +777,225 @@ hr.soft {
     color: black;
   }
 }
+/* SPACING & LAYOUT IMPROVEMENTS PATCH
+   Add these rules to the END of your existing styles.css
+   Or replace the corresponding sections if they exist */
+
+/* Better hero spacing */
+.hero {
+  padding: 44px 0 24px;
+}
+
+.hero h1 {
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+.hero-actions {
+  margin-top: 28px;
+}
+
+/* Better section spacing */
+.section {
+  padding: 40px 0;
+}
+
+.section h2 {
+  margin-bottom: 24px;
+}
+
+/* Improved card grid responsive behavior */
+@media (min-width: 720px) and (max-width: 900px) {
+  .card-grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* More generous card padding */
+.card {
+  padding: 28px;
+}
+
+.card-title {
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+}
+
+/* Better testimonial spacing */
+.card-grid blockquote.testimonial {
+  margin: 0;
+}
+
+@media (min-width: 720px) {
+  .card-grid.cols-3 {
+    gap: 24px;
+  }
+}
+
+blockquote.testimonial {
+  padding: 28px;
+}
+
+blockquote.testimonial p {
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* Add quote styling to testimonials */
+blockquote.testimonial p::before {
+  content: '"';
+  font-size: 2.5rem;
+  line-height: 0;
+  position: relative;
+  top: 20px;
+  left: -8px;
+  color: var(--accent);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+}
+
+/* Refined kicker size */
+.kicker {
+  font-size: 0.9rem;
+  padding: 10px 16px;
+}
+
+/* Enhanced footer */
+.site-footer {
+  padding: 44px 0;
+  border-top: 3px solid var(--border);
+  border-image: linear-gradient(
+    to right,
+    var(--accent) 0%,
+    var(--border) 30%,
+    var(--border) 70%,
+    var(--accent) 100%
+  ) 1;
+}
+
+.footer-inner {
+  gap: 24px;
+}
+
+/* Better main content breathing room */
+main {
+  padding: 40px 0 64px;
+}
+
+/* Improved button spacing in hero */
+@media (max-width: 600px) {
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+/* Better card hover state */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(107, 142, 127, 0.2);
+}
+
+/* Improved list spacing */
+.list li {
+  margin: 12px 0;
+}
+
+/* Better callout padding */
+.callout {
+  padding: 20px 20px 20px 24px;
+  margin: 20px 0;
+}
+
+/* Enhanced placeholder styling */
+.placeholder {
+  padding: 32px;
+  margin: 20px 0;
+}
+
+/* Add subtle animation delay for staggered card appearance */
+.card-grid .card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card-grid .card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card-grid .card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Better spacing for feature icons */
+.card .icon {
+  margin-right: 4px;
+}
+
+/* Improved section heading spacing */
+.section h2 + p {
+  margin-top: 8px;
+}
+
+/* Better spacing between consecutive sections */
+.section + .section {
+  padding-top: 48px;
+}
+
+/* Add subtle separator between major content blocks */
+.section:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, var(--accent), transparent);
+  margin: 48px auto 0;
+  border-radius: 3px;
+  opacity: 0.3;
+}
+
+/* Remove separator from sections with hero-actions */
+.section:has(.hero-actions)::after {
+  display: none;
+}
+
+/* Better responsive spacing for smaller screens */
+@media (max-width: 600px) {
+  .hero {
+    padding: 32px 0 20px;
+  }
+  
+  .section {
+    padding: 32px 0;
+  }
+  
+  .section + .section {
+    padding-top: 40px;
+  }
+  
+  main {
+    padding: 32px 0 56px;
+  }
+}
+
+/* Improved testimonial footer styling */
+blockquote.testimonial footer {
+  font-size: 0.95rem;
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+  margin-top: 4px;
+}
+
+/* Better card-title icon alignment */
+.card-title {
+  align-items: flex-start;
+}
+
+.card-title .icon {
+  margin-top: 2px;
+}
