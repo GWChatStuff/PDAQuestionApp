@@ -999,3 +999,50 @@ blockquote.testimonial footer {
 .card-title .icon {
   margin-top: 2px;
 }
+/* TEXT JUSTIFICATION PATCH
+   Add this to the end of your styles.css */
+
+/* Justify body text for cleaner appearance */
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Exception: Keep centered text centered */
+.placeholder p,
+.hero p,
+.kicker {
+  text-align: left;
+}
+
+/* Exception: Keep short lines left-aligned to avoid awkward spacing */
+.card-title,
+.footer-muted,
+.callout,
+blockquote.testimonial footer {
+  text-align: left;
+}
+
+/* Optional: Add subtle hyphenation for better justification */
+p {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* Keep buttons and links left-aligned */
+.btn,
+.footer-link,
+.nav-link {
+  text-align: center;
+}
+
+/* Keep lists properly aligned */
+.list {
+  text-align: left;
+}
+
+.list li {
+  text-align: justify;
+  text-justify: inter-word;
+}
