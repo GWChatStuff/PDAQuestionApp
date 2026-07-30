@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="PDA Question favicon">
-  <rect width="128" height="128" rx="28" fill="#0b6b7a"/>
-  <path d="M34 86V42h24c14 0 24 9 24 22s-10 22-24 22H34zm16-14h8c7 0 12-4 12-8s-5-8-12-8h-8v16z" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="PDA Question leaf">
+  <rect width="128" height="128" rx="30" fill="#173f32"/>
+  <path d="M92 25C57 27 31 46 33 77c1 17 14 28 30 26 29-3 35-37 29-78Z" fill="#dfe8da"/>
+  <path d="M35 102c11-27 28-45 50-62M61 68c-8-2-15-2-22 0M68 59c0-8-1-14-4-20" fill="none" stroke="#173f32" stroke-width="6" stroke-linecap="round"/>
 </svg>

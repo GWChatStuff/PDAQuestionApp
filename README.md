@@ -118,11 +118,9 @@ DNS can take time to propagate. Once GitHub verifies, your site will load at:
 
 On `resources.html`, each button uses this placeholder format:
 
-`https://www.amazon.com/dp/[BOOK-ASIN-X]?tag=[YOUR-AFFILIATE-TAG]`
+The resources page is a non-commerce reading list and does not contain affiliate links.
 
 Replace:
-- `[YOUR-AFFILIATE-TAG]` with your actual tag
-- `[BOOK-ASIN-X]` with the correct ASIN
 
 Affiliate disclosure is included near the top of the Resources page.
 
@@ -130,7 +128,7 @@ Affiliate disclosure is included near the top of the Resources page.
 
 - App Store links on `download.html` (currently placeholders)
 - Pricing section on `download.html`
-- Optional: Replace screenshot placeholders with real images when available
+- Approved product imagery is stored in `assets/img/app-store/` and `assets/img/screens/`.
 
 ## Support Email
 All email references use: **PDAQuestionApp@gmail.com**
