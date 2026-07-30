@@ -16,8 +16,9 @@
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     nav.classList.toggle("open", open);
     document.body.classList.toggle("menu-open", open);
+    document.documentElement.classList.toggle("menu-open", open);
     setPageInert(open);
-    if (open) { restoreFocus = document.activeElement; window.requestAnimationFrame(() => focusables()[0]?.focus()); }
+    if (open) { restoreFocus = document.activeElement; nav.scrollTop = 0; window.requestAnimationFrame(() => focusables()[0]?.focus()); }
     else if (returnFocus) { toggle.focus(); restoreFocus = null; }
   };
   toggle?.addEventListener("click", () => setMenu(toggle.getAttribute("aria-expanded") !== "true"));
