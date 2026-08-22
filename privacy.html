@@ -49,7 +49,7 @@
 
       <section class="section">
         <h2>Introduction</h2>
-        <p>PDA Question ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how information is handled by our static website (the "Site"), the currently released PDA Question iOS application (Version 1.3, Build 35) (the "App"), the backend and AI providers used by the App, and third parties you choose to share information with (collectively, the "Services"). These systems have different data practices, which are described separately below.</p>
+        <p>PDA Question ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how information is handled by our static website (the "Site"), the currently released PDA Question iOS application (the "App"), the backend and AI providers used by the App, and third parties you choose to share information with (collectively, the "Services"). These systems have different data practices, which are described separately below. This policy describes current practices as of the Last Updated date shown above.</p>
         <p>Please read this Privacy Policy carefully. By using our Services, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our Services.</p>
       </section>
 
@@ -57,31 +57,31 @@
         <h2>Information We Collect</h2>
 
         <h3>The Website</h3>
-        <p>The Site is a static website served through GitHub Pages and its content-delivery infrastructure, including Fastly. The Site has no question-submission form, PDA Question account or registration flow, website checkout or payment processing, or website-based OpenAI generation. Authored Site code contains no analytics SDK, advertising code, tracking pixel, cookies, <code>localStorage</code>, or other authored cross-session browser storage.</p>
-        <p>Authored Site code uses one <code>sessionStorage</code> flag to remember that a visitor dismissed the App download banner during the current browser session. That flag is not transmitted by authored Site code. GitHub Pages, Fastly, and ordinary network infrastructure may process request metadata such as an IP address, browser or device information, requested page, and request time. The exact metadata, retention, and processing locations for those provider-level logs are controlled by the providers and have not been independently verified by PDA Question.</p>
+        <p>The Site is a static website served through GitHub Pages and its content-delivery infrastructure, including Fastly. The Site has no question-submission form, PDA Question account or registration flow, website checkout or payment processing, or website-based OpenAI generation. PDA Question does not add analytics tools, advertising code, tracking pixels, cookies, or cross-session browser storage to the Site.</p>
+        <p>The Site uses one browser-session flag to remember that a visitor dismissed the App download banner during the current browser session. The Site does not transmit that flag. GitHub Pages, Fastly, and ordinary network infrastructure may process request metadata such as an IP address, browser or device information, requested page, and request time. Those providers control the details of their logs, including retention and processing locations, under their own terms, policies, and settings.</p>
         <p>Site support links use a <code>mailto:</code> flow. Activating a link opens the visitor's chosen mail application or provider; information is sent only if the visitor chooses to send the message. The sender address and message then pass through the sender's mail provider and are received in a Gmail mailbox. Links to Apple or OpenAI websites are also followed only when a visitor chooses to activate them.</p>
 
         <h3>The iOS App</h3>
-        <p>The App has no PDA Question registration, username, password, user account, or user-session system. An Apple account may be used by Apple for App Store purchases, and the App evaluates StoreKit entitlement information on the device. The App also uses a locally generated device identifier for backend rate and abuse controls, a shared application token that is not a user credential, and local preferences and context. None of those is a PDA Question user account.</p>
+        <p>The App has no PDA Question registration, username, password, user account, or user-session system. An Apple account may be used by Apple for App Store purchases, and the App evaluates StoreKit entitlement information on the device. The App uses a locally generated device identifier for backend rate and abuse controls, along with application-level technical controls to communicate with the backend. Those controls are not a PDA Question user credential. Local preferences and context also do not create a PDA Question user account.</p>
         <p>When you use the App, you may provide or create information including:</p>
         <ul class="list">
           <li><strong>Questions and Context:</strong> The situation or question you enter and structured context used for generation, such as age, speaker, PDA-related context, requested response length, detected themes, and relevant settings or contextual expansion</li>
           <li><strong>Professional Letters:</strong> Information used to generate a requested letter, which may include a child's name, age, grade, pronouns, school, recipient name or title, challenges, strategies, accommodations, situations, and other context you enter</li>
-          <li><strong>Local App Content:</strong> History, favorites, Professional Letters and drafts, schedules, settings and context, caches, device or security identifiers and telemetry, and other feature-specific state stored on the device</li>
+          <li><strong>Local App Content:</strong> History, favorites, Professional Letters and drafts, schedules, settings and context, caches, technical identifiers, diagnostic or operational metadata, and other feature-specific state stored on the device</li>
           <li><strong>Support and Feedback:</strong> Information you choose to send, which may include your email address, message, feedback or suggestion text, and related app, device, operating-system, network, or request metadata</li>
         </ul>
 
         <h3>Backend and AI Processing</h3>
-        <p>For eligible App generation requests, the App sends provider-bound content through the PDA Question backend to OpenAI. Depending on the feature, that content includes Question and contextual generation data or the Professional Letter information listed above; it is not limited to "question text." The released App may also send operational security events and a fixed synthetic startup request. The synthetic request does not contain the user's question, but it generates the normal request, device, rate-control, token-usage, and cost metadata.</p>
+        <p>For eligible App generation requests, the App sends provider-bound content through the PDA Question backend to OpenAI. Depending on the feature, that content includes Question and contextual generation data or the Professional Letter information listed above; it is not limited to "question text." The released App may also send operational security events and make limited automatic service requests when it starts. Those automatic requests do not contain the user's actual question, but they may involve the PDA Question backend and provider infrastructure, including OpenAI, and create normal device, request, security, rate-control, and service-usage metadata.</p>
         <p>The backend and its infrastructure process operational information needed to deliver and protect the service, including:</p>
         <ul class="list">
-          <li>A stable device identifier used for quotas, rate limits, cost correlation, and abuse controls</li>
-          <li>The requester's IP address, rate-limit and security counters, device-membership state, blocked-request state, and content-derived request hashes used for abuse prevention</li>
-          <li>Security events and provider request, token, cost, and malformed-response metadata used for operations and troubleshooting</li>
-          <li>Normal Vercel runtime and infrastructure logs and Redis/Upstash-compatible operational state</li>
+          <li>A stable device identifier used to apply usage limits, operate the service, and prevent abuse</li>
+          <li>The requester's IP address, request metadata, and temporary security and rate-limit records used to operate the service and prevent abuse</li>
+          <li>Security events and diagnostic or operational metadata about backend and provider activity used to operate and troubleshoot the service</li>
+          <li>Normal Vercel runtime and infrastructure logs, plus temporary server-side operational state held in a managed data store for security and rate limiting</li>
           <li>Feedback and product-suggestion email metadata processed through Resend and Gmail</li>
         </ul>
-        <p>No authored Firebase Analytics, Google Analytics/GA4, Amplitude, Mixpanel, advertising, attribution, IDFA-tracking, or crash-analytics provider is used. Operational security, rate-control, cost, email, and infrastructure data are not described as anonymous product analytics.</p>
+        <p>PDA Question does not currently include Firebase Analytics, Google Analytics/GA4, Amplitude, Mixpanel, advertising or attribution tools, IDFA tracking, or a crash-analytics provider in the App or Site. Operational security, rate-control, service-usage, email, and infrastructure records are separate from product analytics.</p>
 
         <h3>Sensitive Information and Information Not Requested for Ordinary Use</h3>
         <p>Ordinary Question use does not require a child's name, a government identifier, or other unnecessary identifying detail. Please avoid including Social Security numbers, government-issued identification numbers, or other unnecessary sensitive identifiers in free-text fields. The App has no dedicated government-ID field and does not intentionally request government identifiers for ordinary use. Information you voluntarily enter may nevertheless be processed as part of the submitted content.</p>
@@ -116,7 +116,7 @@
         <ul class="list">
           <li>Apply request validation, rate limits, quotas, and abuse controls</li>
           <li>Review operational security events and request metadata</li>
-          <li>Restrict device or application access when evidenced controls are triggered</li>
+          <li>Restrict device or application access when security or abuse controls are triggered</li>
         </ul>
 
         <h3>For Legal Compliance</h3>
@@ -135,7 +135,7 @@
         <p>We may share information with third-party service providers who perform services on our behalf, including:</p>
         <ul class="list">
           <li><strong>OpenAI:</strong> The App sends eligible generation content through our backend to OpenAI. Depending on the feature, this can include the Question and structured context or Professional Letter details, including identifying and sensitive information you choose to enter. The backend does not intentionally add the requester's IP address or device identifier to the OpenAI message content, although identifiers typed into submitted content are included.</li>
-          <li><strong>Website and Backend Infrastructure:</strong> GitHub Pages and Fastly serve the static Site; Vercel hosts the App backend and may process request metadata and runtime logs; and a Redis/Upstash-compatible service holds rate-limit and abuse-control state.</li>
+          <li><strong>Website and Backend Infrastructure:</strong> GitHub Pages and Fastly serve the static Site; Vercel hosts the App backend and may process request metadata and runtime logs; and a managed server-side operational data store holds temporary security and rate-limit records.</li>
           <li><strong>Email Services:</strong> Resend and Gmail process feedback, suggestions, support messages, and related email or request metadata.</li>
           <li><strong>Apple:</strong> Apple provides the App Store, StoreKit purchases, subscription entitlements, restoration, and user-initiated App Store links.</li>
         </ul>
@@ -143,7 +143,7 @@
 
         <h3>AI Generation, Historical Fine-Tuning, and Foundation-Model Training</h3>
         <p>The App currently uses a developer-created fine-tuned model to generate responses. That historical developer fine-tuning is distinct from processing a current request. Generating an Understanding, Script, or Professional Letter does not itself retrain the model.</p>
-        <p>No authored PDA Question product pathway was found that submits current user questions, feedback, or generated responses for OpenAI foundation-model training. OpenAI's current API documentation states that API data is not used to train or improve its models unless an organization explicitly opts in, and separately describes abuse-monitoring and endpoint-specific retention. The applicable PDA Question organization settings and any negotiated retention terms require separate verification, so this policy does not make an unconditional OpenAI training or retention guarantee. See <a href="https://developers.openai.com/api/docs/guides/your-data#default-usage-policies-by-endpoint">OpenAI's API data-controls documentation</a>.</p>
+        <p>PDA Question does not include a separate product workflow whose purpose is to submit current questions, feedback, or generated responses for OpenAI foundation-model training. OpenAI's published API data controls state that API data is not used to train or improve its models unless an organization opts in, and separately address abuse monitoring and endpoint-specific retention. OpenAI's handling of API data depends on its applicable API terms and policies, PDA Question's organization settings, and any applicable contractual controls. This policy therefore does not claim that OpenAI never trains on PDA Question data or guarantee a particular provider retention period. See <a href="https://developers.openai.com/api/docs/guides/your-data#default-usage-policies-by-endpoint">OpenAI's API data-controls documentation</a>.</p>
 
         <h3>Business Transfers</h3>
         <p>If PDA Question is involved in a merger, acquisition, asset sale, or bankruptcy, your information may be transferred as part of that transaction. Any supported notice will be posted on the Site or provided as required by applicable law.</p>
@@ -167,13 +167,13 @@
 
       <section class="section" id="security">
         <h2>Data Security</h2>
-        <p>We use technical controls supported by the current product architecture, including:</p>
+        <p>The Services use technical controls including:</p>
         <ul class="list">
-          <li><strong>Transmission:</strong> Evidenced Site, App-to-backend, and backend-to-provider connections use HTTPS/TLS</li>
-          <li><strong>Request Controls:</strong> The backend applies application authorization, validation, rate limits, and abuse controls</li>
+          <li><strong>Transmission:</strong> Site, App-to-backend, and backend-to-provider connections use HTTPS/TLS</li>
+          <li><strong>Request Controls:</strong> The backend applies application-level request controls, validation, rate limits, and abuse controls</li>
           <li><strong>Device Storage:</strong> App information is stored in iOS files, preferences, or Keychain storage depending on the data category</li>
         </ul>
-        <p>Provider encryption at rest, access-control procedures, security-assessment cadence, incident procedures, and backup practices depend on operational and provider controls that require separate verification. This policy does not claim that every store uses a particular encryption standard or backup period.</p>
+        <p>Security and backup practices can differ among the services we use. We do not state that every system uses the same encryption-at-rest, access-control, security-assessment, incident-response, or backup configuration.</p>
         <p>However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your personal information, we cannot guarantee its absolute security. You use our Services at your own risk.</p>
       </section>
 
@@ -183,10 +183,10 @@
         <ul class="list">
           <li><strong>History:</strong> Question, Understanding, Script, and related History records are stored locally and can be removed individually or through Clear History. Clear History does not remove favorites or every other local App store.</li>
           <li><strong>Other Local Stores:</strong> Favorites, Professional Letters and drafts, schedules, settings and context, caches, the last submitted question, identifiers, and security or feature-specific state have separate retention and deletion behavior. A Professional Letter may exist in both letter history and general History, so deleting one copy does not necessarily delete the other.</li>
-          <li><strong>Device and Security Identifiers:</strong> Local device and telemetry identifiers and some security records may persist until their specific storage is reset or removed, including through applicable device or app-data controls. A comprehensive user-facing deletion control was not found.</li>
-          <li><strong>Backend AI Requests:</strong> Raw ordinary prompts and responses are processed transiently by the backend and are not stored in Redis or an authored backend content database. OpenAI processing and retention are governed separately as described above.</li>
-          <li><strong>Rate and Abuse State:</strong> Backend source configures Redis rate, device, request-hash, and blocking records to expire automatically, generally from seconds up to 24 hours depending on the control. Exact operational retention can depend on provider and runtime behavior.</li>
-          <li><strong>Logs and Email:</strong> Vercel and other infrastructure logs, OpenAI provider data, and Resend/Gmail messages or metadata are controlled separately and are not removed by local App deletion controls. Exact provider retention and backup periods require separate verification.</li>
+          <li><strong>Device and Security Identifiers:</strong> Local device and diagnostic identifiers and some security records may persist until their specific storage is reset or removed through applicable device or app-data controls. The App does not currently provide a single control that deletes information across every local feature and third-party service.</li>
+          <li><strong>Backend AI Requests:</strong> The backend processes raw prompts and generated responses only as needed to provide ordinary generation requests; it does not save them in its security and rate-limit store or a separate PDA Question content database. OpenAI processing and retention are governed separately as described above.</li>
+          <li><strong>Rate and Abuse State:</strong> Certain temporary server-side security and rate-limit records are configured to expire automatically on schedules that vary by purpose. Actual operational retention may also depend on provider and runtime behavior.</li>
+          <li><strong>Logs and Email:</strong> Vercel and other infrastructure logs, OpenAI provider data, and Resend/Gmail messages or metadata are controlled separately and are not removed by local App deletion controls. Retention and backup practices vary by provider, service, and applicable settings.</li>
         </ul>
         <p>You may use the available feature-specific deletion controls and may contact us to make a privacy request. A request will be evaluated across the relevant stores and providers, subject to applicable law and available mechanisms; it is not equivalent to deleting a nonexistent PDA Question account.</p>
       </section>
@@ -301,7 +301,7 @@
 
       <section class="section">
         <h2>Do Not Track Signals</h2>
-        <p>Some web browsers and devices may transmit "do not track" (DNT) signals. Authored Site code does not currently use advertising or tracking technology and does not separately respond to DNT signals.</p>
+        <p>Some web browsers and devices may transmit "do not track" (DNT) signals. PDA Question does not currently add advertising or tracking technology to the Site, and the Site does not separately respond to DNT signals.</p>
       </section>
 
       <section class="section" id="contact">
