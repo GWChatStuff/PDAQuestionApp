@@ -1,0 +1,33 @@
+name: Website integrity
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate static website
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+
+      - name: Check JavaScript syntax
+        run: node --check assets/js/main.js
+
+      - name: Test sticky-banner route behavior
+        run: node scripts/test-sticky-routes.js
+
+      - name: Validate website integrity
+        run: python3 scripts/validate-site.py
