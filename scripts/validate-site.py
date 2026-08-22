@@ -157,6 +157,46 @@ class SiteHTMLParser(HTMLParser):
             self._json_ld_buffer = None
 
 
+class LegalMainTextParser(HTMLParser):
+    """Extract visible main content while ignoring route-specific tables of contents."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.in_main = False
+        self.ignored_depth = 0
+        self.text: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attributes = {name.lower(): value or "" for name, value in attrs}
+        tag = tag.lower()
+        if tag == "main":
+            self.in_main = True
+            return
+        if not self.in_main:
+            return
+        if self.ignored_depth:
+            self.ignored_depth += 1
+            return
+        classes = attributes.get("class", "").split()
+        if tag == "nav" and "toc" in classes:
+            self.ignored_depth = 1
+
+    def handle_endtag(self, tag: str) -> None:
+        if not self.in_main:
+            return
+        if self.ignored_depth:
+            self.ignored_depth -= 1
+            return
+        if tag.lower() == "main":
+            self.in_main = False
+
+    def handle_data(self, data: str) -> None:
+        if self.in_main and not self.ignored_depth:
+            normalized = " ".join(data.split())
+            if normalized:
+                self.text.append(normalized)
+
+
 errors: list[str] = []
 assertions = 0
 
@@ -315,6 +355,24 @@ def validate_canonicals(parsed: dict[Path, SiteHTMLParser]) -> None:
         check("noindex" in directives, "404.html must contain a noindex directive")
 
 
+def validate_terms_consistency() -> None:
+    substantive_text: dict[str, tuple[str, ...]] = {}
+    for filename in ("terms.html", "terms-california.html"):
+        parser = LegalMainTextParser()
+        try:
+            parser.feed((ROOT / filename).read_text(encoding="utf-8"))
+            parser.close()
+        except (OSError, UnicodeError) as exc:
+            errors.append(f"{filename} substantive text could not be parsed: {type(exc).__name__}")
+            return
+        substantive_text[filename] = tuple(parser.text)
+
+    check(
+        substantive_text["terms.html"] == substantive_text["terms-california.html"],
+        "terms.html and terms-california.html must remain substantively synchronized outside their known TOC/ID differences",
+    )
+
+
 def validate_sitemap_and_robots() -> None:
     sitemap_path = ROOT / "sitemap.xml"
     check(sitemap_path.is_file(), "Missing sitemap.xml")
@@ -413,6 +471,7 @@ def main() -> int:
     validate_source_guardrails()
     parsed = validate_html()
     validate_canonicals(parsed)
+    validate_terms_consistency()
     validate_sitemap_and_robots()
     validate_manifest_and_css()
     validate_app_store_ids(parsed)
