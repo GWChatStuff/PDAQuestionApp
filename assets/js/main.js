@@ -1,4 +1,16 @@
+const STICKY_EXCLUDED_PATHS = new Set(["/download", "/privacy", "/terms", "/terms-california"]);
+const normalizeStickyPath = (pathname) => {
+  const path = (pathname || "/").split(/[?#]/, 1)[0];
+  return path.endsWith(".html") ? path.slice(0, -5) : path;
+};
+const isStickyExcludedPath = (pathname) => STICKY_EXCLUDED_PATHS.has(normalizeStickyPath(pathname));
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { isStickyExcludedPath, normalizeStickyPath };
+}
+
 (() => {
+  if (typeof document === "undefined" || typeof window === "undefined") return;
   const header = document.querySelector(".site-header");
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector("#site-nav");
@@ -38,9 +50,7 @@
   const updateHeader = () => header?.classList.toggle("scrolled", window.scrollY > 8);
   updateHeader(); window.addEventListener("scroll", updateHeader, { passive: true });
 
-  const excluded = ["download.html", "privacy.html", "terms.html", "terms-california.html"];
-  const page = location.pathname.split("/").pop() || "index.html";
-  if (!excluded.includes(page) && sessionStorage.getItem("pda-sticky-dismissed") !== "1") {
+  if (!isStickyExcludedPath(location.pathname) && sessionStorage.getItem("pda-sticky-dismissed") !== "1") {
     const bar = document.createElement("aside");
     bar.className = "sticky-download"; bar.setAttribute("aria-label", "Download PDA Question");
     bar.innerHTML = '<div class="container sticky-inner"><div class="sticky-copy"><strong>Support for hard moments</strong><small>PDA Question · $0.99 per month</small></div><a class="btn" href="download.html">View on App Store</a><button class="sticky-close" type="button" aria-label="Dismiss download reminder">×</button></div>';
