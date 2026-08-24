@@ -42,45 +42,55 @@
     <div class="legal-shell legal-content" id="top">
       <section class="legal-hero" aria-label="Header">
         <h1>Privacy Policy</h1>
-        <p>Last Updated: March 25, 2026</p>
+        <p>Last Updated: August 22, 2026</p>
+        <p>Revised Effective Date: September 21, 2026</p>
       </section>
       <div class="legal-summary"><strong>Summary:</strong> This policy explains what information the Services may collect, how it may be used and shared, retention and security, and privacy rights. Review the full policy below.</div>
       <nav class="toc" aria-label="Privacy contents"><strong>On this page</strong><ul><li><a href="#information">Information collected</a></li><li><a href="#use">How information is used</a></li><li><a href="#sharing">How information is shared</a></li><li><a href="#security">Security</a></li><li><a href="#retention">Retention</a></li><li><a href="#rights">Your rights</a></li><li><a href="#children">Children</a></li><li><a href="#contact">Contact</a></li></ul></nav>
 
       <section class="section">
         <h2>Introduction</h2>
-        <p>PDA Question ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application (the "App") and website (the "Site"), collectively referred to as our "Services."</p>
-        <p>Please read this Privacy Policy carefully. By using our Services, you agree to the collection and use of information in accordance with this policy. If you do not agree with our policies and practices, please do not use our Services.</p>
+        <p>PDA Question ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how information is handled by our static website (the "Site"), the currently released PDA Question iOS application (the "App"), the backend and AI providers used by the App, and third parties you choose to share information with (collectively, the "Services"). These systems have different data practices, which are described separately below. The Last Updated date records when this document was revised, and the revised policy text takes effect on the Revised Effective Date shown above. Unless a different timeframe is stated, the technical practices described here reflect the practices reviewed on August 22, 2026.</p>
+        <p>This Privacy Policy is a notice of our data practices, not a request to "accept" the policy as a separate contract. Please review it so you can make informed choices about using the Services and the information you provide.</p>
       </section>
 
       <section class="section" id="information">
         <h2>Information We Collect</h2>
-        
-        <h3>Information You Provide to Us</h3>
-        <p>When you use the App, you may provide information directly, including:</p>
+
+        <h3>The Website</h3>
+        <p>The Site is a static website served through GitHub Pages and its content-delivery infrastructure, including Fastly. The Site has no question-submission form, PDA Question account or registration flow, website checkout or payment processing, or website-based OpenAI generation. PDA Question does not add analytics tools, advertising code, tracking pixels, cookies, or cross-session browser storage to the Site.</p>
+        <p>The Site uses one browser-session flag to remember that a visitor dismissed the App download banner during the current browser session. The Site does not transmit that flag. GitHub Pages, Fastly, and ordinary network infrastructure may process request metadata such as an IP address, browser or device information, requested page, and request time. Those providers control the details of their logs, including retention and processing locations, under their own terms, policies, and settings.</p>
+        <p>Site support links use a <code>mailto:</code> flow. Activating a link opens the visitor's chosen mail application or provider; information is sent only if the visitor chooses to send the message. The sender address and message then pass through the sender's mail provider and are received in a Gmail mailbox. Links to Apple or OpenAI websites are also followed only when a visitor chooses to activate them.</p>
+
+        <h3>The iOS App</h3>
+        <p>The App has no PDA Question registration, username, password, user account, or user-session system. An Apple account may be used by Apple for App Store purchases, and the App evaluates StoreKit entitlement information on the device. The App uses a locally generated device identifier for backend rate and abuse controls, along with application-level technical controls to communicate with the backend. Those controls are not a PDA Question user credential. Local preferences and context also do not create a PDA Question user account.</p>
+        <p>When you use the App, you may provide or create information including:</p>
         <ul class="list">
-          <li><strong>Questions and Prompts:</strong> Text you enter when asking questions or requesting guidance within the App</li>
-          <li><strong>Account Information:</strong> Email address and password if account creation is required for app functionality</li>
-          <li><strong>Support Communications:</strong> Information you provide when contacting customer support, including your email address and message content</li>
+          <li><strong>Questions and Context:</strong> The situation or question you enter and structured context used for generation, such as age, speaker, PDA-related context, requested response length, detected themes, and relevant settings or contextual expansion</li>
+          <li><strong>Professional Letters:</strong> Information used to generate a requested letter, which may include a child's name, age, grade, pronouns, school, recipient name or title, challenges, strategies, accommodations, situations, and other context you enter</li>
+          <li><strong>Local App Content:</strong> History, favorites, Professional Letters and drafts, schedules, settings and context, caches, technical identifiers, diagnostic or operational metadata, and other feature-specific state stored on the device</li>
+          <li><strong>Support and Feedback:</strong> Information you choose to send, which may include your email address, message, feedback or suggestion text, and related app, device, operating-system, network, or request metadata</li>
         </ul>
 
-        <h3>Information Collected Automatically</h3>
-        <p>When you use our Services, we may automatically collect certain information, including:</p>
+        <h3>Backend and AI Processing</h3>
+        <p>For eligible App generation requests, the App sends provider-bound content through the PDA Question backend to OpenAI. Depending on the feature, that content includes Question and contextual generation data or the Professional Letter information listed above; it is not limited to "question text." The released App may also send operational security events and make limited automatic service requests when it starts. Those automatic requests do not contain the user's actual question, but they may involve the PDA Question backend and provider infrastructure, including OpenAI, and create normal device, request, security, rate-control, and service-usage metadata.</p>
+        <p>The backend and its infrastructure process operational information needed to deliver and protect the service, including:</p>
         <ul class="list">
-          <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers, and mobile network information</li>
-          <li><strong>Usage Data:</strong> App features accessed, time spent in the app, interaction patterns, and crash reports</li>
-          <li><strong>Log Data:</strong> IP address, browser type, pages visited on our website, time and date of visits, and time spent on pages</li>
-          <li><strong>Analytics Data:</strong> Aggregated and anonymized usage statistics to improve our Services</li>
+          <li>A stable device identifier used to apply usage limits, operate the service, and prevent abuse</li>
+          <li>The requester's IP address, request metadata, and temporary security and rate-limit records used to operate the service and prevent abuse</li>
+          <li>Security events and diagnostic or operational metadata about backend and provider activity used to operate and troubleshoot the service</li>
+          <li>Normal Vercel runtime and infrastructure logs, plus temporary server-side operational state held in a managed data store for security and rate limiting</li>
+          <li>Feedback and product-suggestion email metadata processed through Resend and Gmail</li>
         </ul>
+        <p>PDA Question does not currently include Firebase Analytics, Google Analytics/GA4, Amplitude, Mixpanel, advertising or attribution tools, IDFA tracking, or a crash-analytics provider in the App or Site. Operational security, rate-control, service-usage, email, and infrastructure records are separate from product analytics.</p>
 
-        <h3>Information We Do NOT Collect</h3>
-        <p>We want to be clear about information we intentionally do not collect:</p>
+        <h3>Sensitive Information and Information Not Requested for Ordinary Use</h3>
+        <p>Ordinary Question use does not require a child's name, a government identifier, or other unnecessary identifying detail. Please avoid including Social Security numbers, government-issued identification numbers, or other unnecessary sensitive identifiers in free-text fields. The App has no dedicated government-ID field and does not intentionally request government identifiers for ordinary use. Information you voluntarily enter may nevertheless be processed as part of the submitted content.</p>
         <ul class="list">
-          <li>Your child's name, photograph, or any personally identifiable information about your child</li>
-          <li>Precise geolocation data</li>
-          <li>Social Security numbers or government-issued identification numbers</li>
-          <li>Financial information (payments are processed through Apple's App Store)</li>
-          <li>Health records or medical information beyond what you voluntarily provide in your questions</li>
+          <li><strong>Child Information:</strong> Some features, including Professional Letters, intentionally accept identifying and contextual information needed to generate the requested content. Free-text fields can also contain information you choose to enter.</li>
+          <li><strong>Health or Sensitive Context:</strong> Questions, letters, schedules, and other fields may contain health, behavioral, educational, school, or other sensitive context you voluntarily provide.</li>
+          <li><strong>Location:</strong> The App does not request precise GPS location. An IP address processed by network and backend infrastructure may indicate an approximate location.</li>
+          <li><strong>Payments:</strong> PDA Question does not directly process or receive payment-card numbers. Apple processes App Store purchases and related Apple account and transaction information.</li>
         </ul>
       </section>
 
@@ -88,29 +98,27 @@
         <h2>How We Use Your Information</h2>
         <p>We use the information we collect for the following purposes:</p>
         
-        <h3>To Provide and Improve Our Services</h3>
+        <h3>To Provide and Maintain Our Services</h3>
         <ul class="list">
-          <li>Generate AI-powered responses to your questions using our fine-tuned model</li>
-          <li>Personalize your experience and remember your preferences</li>
-          <li>Improve our AI model and app functionality based on aggregated usage patterns</li>
-          <li>Develop new features and services</li>
-          <li>Troubleshoot technical issues and ensure app stability</li>
+          <li>Send eligible Question and Professional Letter content through the backend to OpenAI and return the requested Understanding, Script, or letter</li>
+          <li>Personalize the App using context and preferences primarily stored on the device</li>
+          <li>Store App History, favorites, letters, schedules, settings, caches, and other feature-specific state locally</li>
+          <li>Troubleshoot technical issues using support, request, security, and diagnostic metadata</li>
+          <li>Use feedback and operational or diagnostic metadata to maintain and improve service reliability</li>
         </ul>
 
         <h3>To Communicate With You</h3>
         <ul class="list">
           <li>Respond to your support inquiries and feedback</li>
-          <li>Send important updates about the App, including changes to this Privacy Policy</li>
-          <li>Provide technical notices and security alerts</li>
-          <li>Send optional promotional communications (you may opt out at any time)</li>
+          <li>Receive product suggestions and operational reports through our email providers</li>
+          <li>Publish the current Privacy Policy and other supported notices on the Site</li>
         </ul>
 
         <h3>To Ensure Security and Prevent Fraud</h3>
         <ul class="list">
-          <li>Detect and prevent fraudulent transactions and abuse</li>
-          <li>Monitor and analyze security threats</li>
-          <li>Enforce our Terms of Service</li>
-          <li>Protect the rights, property, and safety of PDA Question, our users, and the public</li>
+          <li>Apply request validation, rate limits, quotas, and abuse controls</li>
+          <li>Review operational security events and request metadata</li>
+          <li>Restrict device or application access when security or abuse controls are triggered</li>
         </ul>
 
         <h3>For Legal Compliance</h3>
@@ -125,18 +133,22 @@
         <h2>How We Share Your Information</h2>
         <p>We do not sell, rent, or trade your personal information to third parties. We may share your information only in the following limited circumstances:</p>
 
-        <h3>Service Providers</h3>
-        <p>We may share information with third-party service providers who perform services on our behalf, including:</p>
+        <h3>Operational Service Providers Selected by PDA Question</h3>
+        <p>We use operational providers to deliver and support the Services, including:</p>
         <ul class="list">
-          <li><strong>AI Service Provider — OpenAI, L.L.C.:</strong> When you submit a question, your query text is transmitted to OpenAI, L.L.C. for AI processing to generate a response. No account name or persistent personal identity is required or transmitted. OpenAI's privacy policy governs their processing: <a href="https://openai.com/policies/privacy-policy">https://openai.com/policies/privacy-policy</a></li>
-          <li><strong>Cloud Hosting:</strong> Secure cloud infrastructure providers to store app data</li>
-          <li><strong>Analytics Providers:</strong> Services that help us understand app usage (data is aggregated and anonymized)</li>
-          <li><strong>Customer Support:</strong> Tools that help us respond to your inquiries</li>
+          <li><strong>OpenAI:</strong> The App sends eligible generation content through our backend to OpenAI. Depending on the feature, this can include the Question and structured context or Professional Letter details, including identifying and sensitive information you choose to enter. The backend does not intentionally add the requester's IP address or device identifier to the OpenAI message content, although identifiers typed into submitted content are included.</li>
+          <li><strong>Website and Backend Infrastructure:</strong> GitHub Pages and Fastly serve the static Site; Vercel hosts the App backend and may process request metadata and runtime logs; and a managed server-side operational data store holds temporary security and rate-limit records.</li>
+          <li><strong>Email Services:</strong> Resend and Gmail process feedback, suggestions, support messages, and related email or request metadata.</li>
+          <li><strong>Apple:</strong> Apple provides the App Store, StoreKit purchases, subscription entitlements, restoration, and user-initiated App Store links.</li>
         </ul>
-        <p>All service providers are contractually required to protect your information and use it only for the specific services they provide to us.</p>
+        <p>We are responsible for accurately describing our use of these providers and for the provider choices we make. Provider handling, retention, processing locations, and independently controlled practices depend on each provider's applicable terms, policies, account settings, and technical controls, which we do not control in every detail. We do not promise a provider-specific retention period or processing location unless expressly stated here.</p>
+
+        <h3>AI Generation, Historical Fine-Tuning, and Foundation-Model Training</h3>
+        <p>The App currently uses a developer-created fine-tuned model to generate responses. That historical developer fine-tuning is distinct from processing a current request. Generating an Understanding, Script, or Professional Letter does not itself retrain the model.</p>
+        <p>PDA Question does not include a separate product workflow whose purpose is to submit current questions, feedback, or generated responses for OpenAI foundation-model training. OpenAI's published API data controls state that API data is not used to train or improve its models unless an organization opts in, and separately address abuse monitoring and endpoint-specific retention. OpenAI's handling of PDA Question API data, including any provider training use and retention, depends on its applicable API terms and policies, PDA Question's organization settings, and any applicable contractual controls. See <a href="https://developers.openai.com/api/docs/guides/your-data#default-usage-policies-by-endpoint">OpenAI's API data-controls documentation</a>.</p>
 
         <h3>Business Transfers</h3>
-        <p>If PDA Question is involved in a merger, acquisition, asset sale, or bankruptcy, your information may be transferred as part of that transaction. We will notify you via email and/or prominent notice in the App of any change in ownership or use of your personal information.</p>
+        <p>If PDA Question is involved in a merger, acquisition, asset sale, or bankruptcy, your information may be transferred as part of that transaction. Any supported notice will be posted on the Site or provided as required by applicable law.</p>
 
         <h3>Legal Requirements</h3>
         <p>We may disclose your information if required to do so by law or in response to valid requests by public authorities (e.g., a court order or subpoena), or to:</p>
@@ -149,142 +161,115 @@
 
         <h3>With Your Consent</h3>
         <p>We may share your information for any other purpose with your explicit consent.</p>
+
+        <h3>User-Directed Sharing and External Links</h3>
+        <p>The App lets you choose to copy, export, email, message, or share selected content through the iOS clipboard, Mail, Messages, PDF tools, or system share sheet. These handoffs occur only when you initiate them. Once content is sent to a recipient app, person, or provider, that destination controls its own use and retention.</p>
+        <p>The App's Helpful Products feature contains tagged Amazon links that you may choose to open. The Site currently contains no Amazon affiliate links. Other Apple, OpenAI, and resource links are also opened only by user action.</p>
       </section>
 
       <section class="section" id="security">
         <h2>Data Security</h2>
-        <p>We take the security of your information seriously and implement appropriate technical and organizational measures to protect it, including:</p>
+        <p>The Services use technical controls including:</p>
         <ul class="list">
-          <li><strong>Encryption:</strong> Data transmitted between your device and our servers is encrypted using industry-standard SSL/TLS protocols</li>
-          <li><strong>Secure Storage:</strong> Data at rest is encrypted using advanced encryption standards</li>
-          <li><strong>Access Controls:</strong> Strict access controls limit who can view or process your information</li>
-          <li><strong>Regular Security Audits:</strong> We conduct regular security assessments to identify and address vulnerabilities</li>
-          <li><strong>Incident Response:</strong> We have procedures in place to respond to potential security breaches</li>
+          <li><strong>Transmission:</strong> Site, App-to-backend, and backend-to-provider connections use HTTPS/TLS</li>
+          <li><strong>Request Controls:</strong> The backend applies application-level request controls, validation, rate limits, and abuse controls</li>
+          <li><strong>Device Storage:</strong> App information is stored in iOS files, preferences, or Keychain storage depending on the data category</li>
         </ul>
+        <p>Security and backup practices can differ among the services we use. We do not state that every system uses the same encryption-at-rest, access-control, security-assessment, incident-response, or backup configuration.</p>
         <p>However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your personal information, we cannot guarantee its absolute security. You use our Services at your own risk.</p>
       </section>
 
       <section class="section" id="retention">
         <h2>Data Retention</h2>
-        <p>We retain your information for as long as necessary to provide our Services and fulfill the purposes described in this Privacy Policy, unless a longer retention period is required or permitted by law.</p>
+        <p>Retention and deletion differ by data store and feature. The App has no PDA Question account and there is no single account-deletion or all-data-deletion endpoint.</p>
         <ul class="list">
-          <li><strong>Active Accounts:</strong> We retain your data while your account is active and you continue to use the App</li>
-          <li><strong>Deleted Accounts:</strong> When you delete your account, we will delete your personal information within 30 days, except where we must retain it for legal compliance, dispute resolution, or fraud prevention</li>
-          <li><strong>Aggregated Data:</strong> We may retain anonymized, aggregated data indefinitely for analytics and improvement purposes</li>
-          <li><strong>Backup Systems:</strong> Data may remain in backup systems for up to 90 days after deletion</li>
+          <li><strong>History:</strong> Question, Understanding, Script, and related History records are stored locally and can be removed individually or through Clear History. Clear History does not remove favorites or every other local App store.</li>
+          <li><strong>Other Local Stores:</strong> Favorites, Professional Letters and drafts, schedules, settings and context, caches, the last submitted question, identifiers, and security or feature-specific state have separate retention and deletion behavior. A Professional Letter may exist in both letter history and general History, so deleting one copy does not necessarily delete the other.</li>
+          <li><strong>Device and Security Identifiers:</strong> Local device and diagnostic identifiers and some security records may persist until their specific storage is reset or removed through applicable device or app-data controls. The App does not currently provide a single control that deletes information across every local feature and third-party service.</li>
+          <li><strong>Backend AI Requests:</strong> The backend processes raw prompts and generated responses only as needed to provide ordinary generation requests; it does not save them in its security and rate-limit store or a separate PDA Question content database. OpenAI processing and retention are governed separately as described above.</li>
+          <li><strong>Rate and Abuse State:</strong> Certain temporary server-side security and rate-limit records are configured to expire automatically on schedules that vary by purpose. Actual operational retention may also depend on provider and runtime behavior.</li>
+          <li><strong>Logs and Email:</strong> Vercel and other infrastructure logs, OpenAI provider data, and Resend/Gmail messages or metadata are controlled separately and are not removed by local App deletion controls. Retention and backup practices vary by provider, service, and applicable settings.</li>
         </ul>
+        <p>You may use the available feature-specific deletion controls and may contact us to make a privacy request. A request will be evaluated across the relevant stores and providers, subject to applicable law and available mechanisms; it is not equivalent to deleting a nonexistent PDA Question account.</p>
       </section>
 
       <section class="section" id="rights">
-        <h2>Your Privacy Rights</h2>
-        <p>Depending on your location, you may have certain rights regarding your personal information:</p>
+        <h2>Privacy Requests and Applicable Rights</h2>
+        <p>Anyone may contact us for reasonable assistance with information associated with them. Depending on what we can identify and retrieve, you may ask us to:</p>
+        <ul class="list">
+          <li>Provide access to or a copy of information we hold about you</li>
+          <li>Correct inaccurate information we control</li>
+          <li>Delete information we control</li>
+          <li>Explain available App controls or provider-specific request steps</li>
+        </ul>
+        <p>These voluntary requests are subject to reasonable identity and authority verification and to technical, security, provider, legal, and record-retention limitations. Because PDA Question has no user account and information is split among local App stores, operational systems, providers, and email, we may not be able to identify, retrieve, correct, or delete every item. We will explain what we can reasonably do.</p>
+        <p>Privacy laws in some jurisdictions may provide additional rights when those laws apply to PDA Question or to particular information. We will review and respond to legally applicable requests as required, but this policy does not claim that a named privacy statute applies solely because a person lives in a particular place.</p>
 
-        <h3>Access and Portability</h3>
-        <p>You have the right to request access to the personal information we hold about you and to receive a copy of it in a portable format.</p>
-
-        <h3>Correction</h3>
-        <p>You have the right to request that we correct inaccurate or incomplete personal information.</p>
-
-        <h3>Deletion</h3>
-        <p>You have the right to request deletion of your personal information, subject to certain legal exceptions.</p>
-
-        <h3>Restriction and Objection</h3>
-        <p>You have the right to request that we restrict processing of your personal information or to object to processing based on legitimate interests.</p>
-
-        <h3>Withdrawal of Consent</h3>
-        <p>If we process your information based on your consent, you have the right to withdraw that consent at any time.</p>
-
-        <h3>Opt-Out of Marketing</h3>
-        <p>You have the right to opt out of receiving promotional communications from us. You can do this by following the unsubscribe instructions in emails or by contacting us directly.</p>
-
-        <h3>How to Exercise Your Rights</h3>
-        <p>To exercise any of these rights, please contact us at <a href="mailto:PDAQuestionApp@gmail.com">PDAQuestionApp@gmail.com</a>. We will respond to your request within 30 days. You will not be discriminated against for exercising any of these rights.</p>
+        <h3>How to Make a Request</h3>
+        <p>Email <a href="mailto:PDAQuestionApp@gmail.com">PDAQuestionApp@gmail.com</a> with the subject line "Privacy Request" and describe the information or assistance you are seeking. Please do not send unnecessary sensitive information with your initial request. We may ask for additional information reasonably needed to verify your identity, authority, or the records involved.</p>
       </section>
 
       <section class="section" id="children">
-        <h2>Children's Privacy</h2>
-        <p>Our Services are intended for use by parents, caregivers, and professionals supporting children with PDA. The App is not directed at children under 13, and we do not knowingly collect personal information from children under 13.</p>
-        <p>If you are a parent or guardian and believe your child under 13 has provided us with personal information, please contact us immediately at <a href="mailto:PDAQuestionApp@gmail.com">PDAQuestionApp@gmail.com</a>, and we will delete such information from our systems.</p>
-        <p>While parents may enter information about their children (such as age range, triggers, or regulation patterns) when using the App, we:</p>
+        <h2>Children's Information and Adult Use</h2>
+        <p>PDA Question is designed for direct use by adults who are at least 18. An App Store designation such as "Rated 13+" is a storefront content rating and does not change the Terms' 18+ eligibility requirement.</p>
+        <p>Adults may use the Services to support a child in their family or care and may provide information concerning that child. The current service is consumer and family focused. Professionals may receive or review material that a family chooses to share, but PDA Question is not currently offered to organizations, schools, clinics, agencies, or professional practices for independent submission of client, patient, or student information.</p>
+        <p>Ordinary Question use does not require a child's name, and we encourage adults to avoid unnecessary identifying or sensitive details. However, users may voluntarily enter identifying or sensitive information in free-text fields, and some features intentionally request information needed for the feature:</p>
         <ul class="list">
-          <li>Do not require or request children's names, photos, or other identifying information</li>
-          <li>Encourage parents to avoid including identifying details about their children in questions or tracking</li>
-          <li>Do not share children's information with third parties except as described in this policy</li>
-          <li>Provide parents with tools to delete any information about their children at any time</li>
+          <li>Professional Letters may request a child's name, age, grade, pronouns, school, challenges, strategies, accommodations, situations, recipient details, and other entered context</li>
+          <li>Question and Professional Letter content is processed through the backend and OpenAI for the generation the adult user requests</li>
+          <li>PDA Question does not verify the accuracy of information entered by a user</li>
+          <li>Deletion is feature- and store-specific; local controls do not automatically remove provider logs, operational state, email, or a separate copy stored in another App feature</li>
         </ul>
+        <p>If you believe a person under 18 used the Services directly or submitted information, contact us at <a href="mailto:PDAQuestionApp@gmail.com">PDAQuestionApp@gmail.com</a> so we can review the relevant stores, providers, and available steps. Where COPPA or another child-privacy law applies, we will handle the matter as that law requires.</p>
       </section>
 
       <section class="section">
-        <h2>International Data Transfers</h2>
-        <p>Your information may be transferred to and processed in countries other than your country of residence. These countries may have data protection laws that differ from the laws of your country.</p>
-        <p>If we transfer your information internationally, we will ensure appropriate safeguards are in place, such as:</p>
-        <ul class="list">
-          <li>Standard contractual clauses approved by regulatory authorities</li>
-          <li>Adequacy decisions recognizing equivalent levels of data protection</li>
-          <li>Your explicit consent to the transfer</li>
-        </ul>
-        <p>By using our Services, you consent to the transfer of your information to the United States and other countries where we operate.</p>
+        <h2>International Processing</h2>
+        <p>PDA Question and its operational providers may process information in the United States and other countries. Data-protection rules and provider practices may differ from those in your country, and the exact processing locations and transfer controls depend on the provider, service, account settings, and applicable requirements.</p>
+        <p>Where an international-transfer requirement applies to PDA Question or particular information, we will address it as required by applicable law.</p>
       </section>
 
       <section class="section">
-        <h2>Third-Party Links and Services</h2>
-        <p>Our Services may contain links to third-party websites, services, or resources, including:</p>
+        <h2>Third-Party Links and User-Selected Services</h2>
+        <p>Our Services may contain links to or let you share with third-party websites, services, people, or resources that you choose, including:</p>
         <ul class="list">
-          <li>External resources and articles</li>
-          <li>Social media platforms</li>
+          <li>Apple App Store and OpenAI policy pages linked from the Site</li>
+          <li>Educational resources and articles linked from the Site or App</li>
+          <li>Tagged Amazon Helpful Products links in the App</li>
+          <li>Mail, Messages, the clipboard, and other destinations you select through App sharing tools</li>
         </ul>
-        <p>We are not responsible for the privacy practices of these third parties. We encourage you to review their privacy policies before providing any information to them. This Privacy Policy applies only to information collected by PDA Question.</p>
+        <p>After you intentionally follow a link or send content to a destination, that third party controls its own independent handling under its policies and settings. We encourage you to review those practices before providing information. This differs from the operational providers PDA Question selects to deliver the Services, whose roles are described in this policy. We remain responsible for the accuracy of our own disclosures and the provider choices we make, but we do not control every independently operated provider or destination system.</p>
       </section>
 
       <section class="section">
-        <h2>California Privacy Rights</h2>
-        <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA):</p>
-        <ul class="list">
-          <li><strong>Right to Know:</strong> You can request information about the categories and specific pieces of personal information we have collected, the sources of that information, our business purposes for collecting it, and the categories of third parties with whom we share it</li>
-          <li><strong>Right to Delete:</strong> You can request deletion of your personal information, subject to certain exceptions</li>
-          <li><strong>Right to Opt-Out:</strong> You have the right to opt out of the "sale" of your personal information. We do not sell personal information</li>
-          <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising your CCPA rights</li>
-        </ul>
-        <p>To exercise these rights, contact us at <a href="mailto:PDAQuestionApp@gmail.com">PDAQuestionApp@gmail.com</a>. We may need to verify your identity before processing your request.</p>
-      </section>
+        <h2>Jurisdiction-Specific Privacy Rights</h2>
+        <p>The sections below summarize potential rights when the named law applies; they do not determine applicability based only on a person's location.</p>
 
-      <section class="section">
-        <h2>European Privacy Rights (GDPR)</h2>
-        <p>If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, you have rights under the General Data Protection Regulation (GDPR), including:</p>
-        <ul class="list">
-          <li>Right of access to your personal data</li>
-          <li>Right to rectification of inaccurate data</li>
-          <li>Right to erasure ("right to be forgotten")</li>
-          <li>Right to restriction of processing</li>
-          <li>Right to data portability</li>
-          <li>Right to object to processing</li>
-          <li>Right to withdraw consent</li>
-          <li>Right to lodge a complaint with a supervisory authority</li>
-        </ul>
-        <p>We process your personal information based on the following legal bases:</p>
-        <ul class="list">
-          <li><strong>Contract:</strong> To provide the Services you requested</li>
-          <li><strong>Legitimate Interests:</strong> To improve our Services, ensure security, and communicate with you</li>
-          <li><strong>Consent:</strong> Where you have given explicit consent (e.g., for marketing communications)</li>
-          <li><strong>Legal Obligation:</strong> To comply with applicable laws</li>
-        </ul>
+        <h3>California</h3>
+        <p>If the California Consumer Privacy Act, as amended by the California Privacy Rights Act (CCPA/CPRA), applies to PDA Question and the relevant information, California residents may have rights such as access or knowledge, correction, deletion, portability, opt-out of certain sales or sharing, limits on certain uses of sensitive personal information, and non-discrimination. The existence and scope of a right depend on statutory applicability, definitions, and exceptions.</p>
+        <p>As a factual description of current practices, PDA Question does not sell personal information and does not currently include advertising, attribution, or cross-site tracking technology in the App or Site.</p>
+
+        <h3>European Economic Area, United Kingdom, and Switzerland</h3>
+        <p>If the GDPR, UK data-protection law, Swiss data-protection law, or another applicable regime applies to PDA Question and the relevant processing, it may provide rights such as access, correction, deletion, restriction, portability, objection, withdrawal of consent where consent is used, or a complaint to an appropriate authority.</p>
+
+        <h3>Other Jurisdictions</h3>
+        <p>Other privacy laws may provide additional rights when their scope and requirements apply. You may use the same privacy-request channel described above, and we will evaluate the request under applicable law and available mechanisms.</p>
       </section>
 
       <section class="section">
         <h2>Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make changes, we will:</p>
+        <p>We may update this Privacy Policy to reflect changes in our practices, technology, applicable requirements, or other relevant circumstances. When we make changes, we will:</p>
         <ul class="list">
           <li>Update the "Last Updated" date at the top of this policy</li>
-          <li>Notify you via email (if you have provided an email address)</li>
-          <li>Display a prominent notice in the App</li>
-          <li>For material changes, we may seek your consent or provide you the opportunity to opt out</li>
+          <li>Post the revised policy on the Site</li>
+          <li>State the date when the revised policy takes effect</li>
         </ul>
-        <p>We encourage you to review this Privacy Policy periodically. Your continued use of our Services after changes are posted constitutes your acceptance of the updated policy.</p>
+        <p>We may provide additional notice or seek consent where required by applicable law. Continued use does not turn this Privacy Policy into a separate contract or replace consent where consent is legally required.</p>
       </section>
 
       <section class="section">
         <h2>Do Not Track Signals</h2>
-        <p>Some web browsers and devices may transmit "do not track" (DNT) signals. We do not currently respond to DNT signals because there is no industry consensus on how to honor such signals. We will continue to monitor developments in this area.</p>
+        <p>Some web browsers and devices may transmit "do not track" (DNT) signals. PDA Question does not currently add advertising or tracking technology to the Site, and the Site does not separately respond to DNT signals.</p>
       </section>
 
       <section class="section" id="contact">
@@ -294,12 +279,12 @@
           <strong>Email:</strong> <a href="mailto:PDAQuestionApp@gmail.com">PDAQuestionApp@gmail.com</a><br>
           <strong>Subject Line:</strong> Privacy Inquiry
         </p>
-        <p>We will respond to your inquiry within 30 days.</p>
+        <p>We will review and respond to inquiries as appropriate and as required by applicable law.</p>
       </section>
 
       <section class="section">
         <div class="callout">
-          <p><strong>Effective Date:</strong> This Privacy Policy is effective as of January 6, 2025, and applies to all information collected by PDA Question from that date forward.</p>
+          <p><strong>Version dates:</strong> This document was last updated August 22, 2026. The revised policy text takes effect September 21, 2026 and describes practices from that date forward.</p>
         </div>
       </section>
     </div>
